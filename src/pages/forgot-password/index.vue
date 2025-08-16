@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import type { FieldRule } from 'vant'
 import { showNotify } from 'vant'
 import { useUserStore } from '@/stores'
 import vw from '@/utils/inline-px-to-vw'
@@ -31,7 +30,7 @@ const rules = reactive({
   confirmPassword: [
     { required: true, message: '请再次输入密码' },
     { required: true, validator: validatorPassword, message: '两次输入的密码不一致' },
-  ] as FieldRule[],
+  ],
 })
 
 async function reset() {
