@@ -3,18 +3,28 @@ import { rootRouteList } from '@/config/routes'
 
 const route = useRoute()
 const router = useRouter()
-const { t } = useI18n()
 
-/**
- * Get page title
- * Located in src/locales/json
- */
+const titleMap: Record<string, string> = {
+  'Home': '主页',
+  'Profile': '我的',
+  'Mock': '🗂️ Mock',
+  'Charts': '📊 图表',
+  'UnoCSS': '⚡ UnoCSS',
+  'Counter': '🍍 状态持久化',
+  'KeepAlive': '♻️ 页面缓存',
+  'ScrollCache': '📍 滚动缓存',
+  'Login': '🧑‍💻 登录',
+  'Register': '🧑‍💻 注册',
+  'ForgotPassword': '❓ 忘记密码',
+  'Settings': '⚙️ 设置',
+  '404': '⚠️ 404 页面',
+}
+
 const title = computed(() => {
-  if (route.name) {
-    return t(`navbar.${route.name}`)
+  if (route.name && titleMap[route.name as string]) {
+    return titleMap[route.name as string]
   }
-
-  return t('navbar.Undefined')
+  return '🤷 未定义标题'
 })
 
 /**

@@ -25,18 +25,18 @@ function login() {
 
         <template #value>
           <span v-if="isLogin">{{ userInfo.name }}</span>
-          <span v-else>{{ $t('profile.login') }}</span>
+          <span v-else>登录</span>
         </template>
       </van-cell>
     </VanCellGroup>
 
     <VanCellGroup :inset="true" class="!mt-16">
-      <van-cell :title="$t('profile.settings')" icon="setting-o" is-link to="/settings">
+      <van-cell title="设置" icon="setting-o" is-link to="/settings">
         <template #icon>
           <div class="i-carbon:settings text-gray-400 mr-5 self-center" />
         </template>
       </van-cell>
-      <van-cell :title="$t('profile.docs')" is-link url="https://vue-zone.github.io/docs/vue3-vant-mobile/">
+      <van-cell title="文档" is-link url="https://vue-zone.github.io/docs/vue3-vant-mobile/">
         <template #icon>
           <div class="i-carbon:doc text-gray-400 mr-5 self-center" />
         </template>

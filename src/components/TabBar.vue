@@ -15,13 +15,13 @@ const show = computed(() => {
 <template>
   <van-tabbar v-if="show" v-model="active" route placeholder>
     <van-tabbar-item replace to="/">
-      {{ $t('tabbar.home') }}
+      首页
       <template #icon>
         <div class="i-carbon:home" />
       </template>
     </van-tabbar-item>
     <van-tabbar-item replace to="/profile">
-      {{ $t('tabbar.profile') }}
+      我的
       <template #icon>
         <div class="i-carbon:user" />
       </template>

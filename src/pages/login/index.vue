@@ -7,7 +7,6 @@ import logo from '~/images/logo.svg'
 import logoDark from '~/images/logo-dark.svg'
 import vw from '@/utils/inline-px-to-vw'
 
-const { t } = useI18n()
 const router = useRouter()
 const userStore = useUserStore()
 const loading = ref(false)
@@ -28,10 +27,10 @@ const postData = reactive({
 
 const rules = reactive({
   email: [
-    { required: true, message: t('login.pleaseEnterEmail') },
+    { required: true, message: '请输入邮箱' },
   ],
   password: [
-    { required: true, message: t('login.pleaseEnterPassword') },
+    { required: true, message: '请输入密码' },
   ],
 })
 
@@ -65,7 +64,7 @@ async function login(values: any) {
           v-model="postData.email"
           :rules="rules.email"
           name="email"
-          :placeholder="$t('login.email')"
+          placeholder="邮箱"
         />
       </div>
 
@@ -75,7 +74,7 @@ async function login(values: any) {
           type="password"
           :rules="rules.password"
           name="password"
-          :placeholder="$t('login.password')"
+          placeholder="密码"
         />
       </div>
 
@@ -86,17 +85,17 @@ async function login(values: any) {
           native-type="submit"
           round block
         >
-          {{ $t('login.login') }}
+          登录
         </van-button>
       </div>
     </van-form>
 
     <GhostButton block to="register" :style="{ 'margin-top': vw(18) }">
-      {{ $t('login.signUp') }}
+      还没有账号？点击注册
     </GhostButton>
 
     <GhostButton block to="forgot-password">
-      {{ $t('login.forgotPassword') }}
+      忘记密码？
     </GhostButton>
   </div>
 </template>

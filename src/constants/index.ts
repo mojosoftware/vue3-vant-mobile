@@ -1,4 +1,2 @@
-import { i18n } from '@/utils/i18n'
-
-export const appName = () => i18n.global.t('app.name')
-export const appDescription = () => i18n.global.t('app.description')
+export const appName = () => 'Vue3 移动端模板'
+export const appDescription = () => '一个基于 Vue 3 生态系统的移动 web 应用模板'

@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import { useRouteCacheStore } from '@/stores'
 
-const { t } = useI18n()
 
 useHead({
-  title: () => t('app.name'),
+  title: 'Vue3 移动端模板',
   meta: [
     {
       name: 'description',
-      content: () => t('app.description'),
+      content: '一个基于 Vue 3 生态系统的移动 web 应用模板',
     },
     {
       name: 'theme-color',

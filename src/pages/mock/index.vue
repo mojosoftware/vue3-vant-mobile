@@ -13,22 +13,22 @@ function pull() {
 
 <template>
   <div class="data-label">
-    {{ $t('mock.fromAsyncData') }}
+    来自异步请求的数据
   </div>
 
   <div class="data-content bg-white dark:bg-[--van-background-2]">
     <div v-if="messages">
       {{ messages }}
     </div>
-    <VanEmpty v-else :description="$t('mock.noData')" />
+    <VanEmpty v-else description="暂无数据" />
   </div>
 
   <van-space class="m-10" direction="vertical" fill>
     <VanButton type="primary" round block @click="pull">
-      {{ $t('mock.pull') }}
+      请求
     </VanButton>
     <VanButton type="default" round block @click="messages = ''">
-      {{ $t('mock.reset') }}
+      清空
     </VanButton>
   </van-space>
 </template>
